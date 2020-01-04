@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>In Hóa Đơn</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="bill d-flex justify-content-center">
+        <div class="bill1">
+            <style type="text/css">
+                .printBox {
+                    font-family: Arial, sans-serif;
+                    font-size: 11px;
+                }
+
+                table {
+                    page-break-inside: auto;
+                    border-collapse: collapse;
+                }
+
+                table td {
+                    word-wrap: break-word;
+                    word-break: break-all;
+                }
+
+                tr {
+                    page-break-inside: avoid;
+                    page-break-after: auto
+                }
+            
+            </style>
+            <div class="printBox">
+                <table style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td style="text-align:center">
+                                <table style="width:100%">
+                                    <tbody>
+                                        <tr>
+                                            <img class="lo-go" src="image/logo.png" alt="logo" style="width: 115px ;">
+                                            <!-- <td style="font-size:11px; text-align:center">{Logo_Cua_Hang}</td> -->
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px; text-align:center"><strong
+                                                    style="font-size:11px">{Ten_Cua_Hang}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px; text-align:center">Địa chỉ:</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-size:11px; text-align:center">Điện thoại:
+                                                {Dien_Thoai_Chi_Nhanh}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="padding:10px 0 0; text-align:center"><strong style="font-size:12px">HÓA ĐƠN BÁN
+                        HÀNG</strong>
+                </div>
+
+                <table style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td style="font-size:11px; text-align:center">Số HĐ: {Ma_Don_Hang}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:11px; text-align:center">Ngày {Ngay} tháng {Thang} năm {Nam}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="margin:10px 0 15px; width:100%">
+                    <tbody>
+                        <tr>
+                            <td style="font-size:11px">Khách hàng: {Khach_Hang}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:11px">SĐT: {So_Dien_Thoai}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:11px">Địa chỉ: {Dia_Chi_Khach_Hang} - {Phuong_Xa_Khach_Hang} -
+                                {Khu_Vuc_Khach_Hang_QH_TP}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table cellpadding="3" style="width:98%">
+                    <tbody>
+                        <tr>
+                            <td style="border-bottom:1px solid black; border-top:1px solid black; width:35%">
+                                <strong><span style="font-size:11px">Đơn giá</span></strong></td>
+                            <td
+                                style="border-bottom:1px solid black; border-top:1px solid black; text-align:right; width:30%">
+                                <strong><span style="font-size:11px">SL</span></strong></td>
+                            <td style="border-bottom:1px solid black; border-top:1px solid black; text-align:right">
+                                <strong><span style="font-size:11px">Thành tiền</span></strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="padding-top:3px"><span style="font-size:12px">{Ten_Hang_Hoa}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-bottom:1px dashed black"><span
+                                    style="font-size:11px">{Don_Gia_Chiet_Khau}</span></td>
+                            <td style="border-bottom:1px dashed black; text-align:right"><span
+                                    style="font-size:11px">{So_Luong}</span></td>
+                            <td style="border-bottom:1px dashed black; text-align:right"><span
+                                    style="font-size:11px">{Thanh_Tien}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table border="0" cellpadding="3" cellspacing="0"
+                    style="border-collapse:collapse; margin-top:20px; width:98%">
+                    <tfoot>
+                        <tr>
+                            <td style="font-size:11px; font-weight:bold; text-align:right; white-space:nowrap">Tổng tiền
+                                hàng:</td>
+                            <td style="font-size:11px; font-weight:bold; text-align:right">{Tong_Tien_Hang}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:11px; font-weight:bold; text-align:right; white-space:nowrap">Chiết
+                                khấu
+                                {Chiet_Khau_Hoa_Don_Phan_Tram}:</td>
+                            <td style="font-size:11px; font-weight:bold; text-align:right">{Chiet_Khau_Hoa_Don}</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:11px; font-weight:bold; text-align:right; white-space:nowrap">Tổng
+                                thanh
+                                toán:</td>
+                            <td style="font-size:11px; font-weight:bold; text-align:right">{Tong_Cong}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-size:11px; font-style:italic; text-align:left">
+                                ({Tong_Cong_Bang_Chu})</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <table style="margin-top:20px; width:100%">
+                    <tbody>
+                        <tr>
+                            <td style="font-size:11px; font-style:italic; text-align:center">Cảm ơn và hẹn gặp lại!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
