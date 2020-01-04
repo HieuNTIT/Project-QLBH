@@ -46,7 +46,35 @@ h4{
 .navba ul li a:hover{
     color: #000000;
 }
+<<<<<<< HEAD:GianHang.css
 
 #list{
     list-style: none;
 }
+=======
+#listShoes{
+    list-style: none;
+    
+}
+.img-responsive{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+#masp {
+    margin-top: -2px;
+    margin-bottom: 1rem;
+    margin-left: 26px;
+}
+#nameSP{
+    margin-top: -16px;
+    margin-left: 9px;
+    margin-bottom: .5rem;
+}
+.img-responsive ul li:hover{
+    height: 80%;
+    width: 80%;
+    
+    display: block;
+}
+>>>>>>> 07293cee9dfd592dd5eb4289b9bf81a55ae55702:NhapHang.css

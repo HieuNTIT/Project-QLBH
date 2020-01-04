@@ -1,6 +1,10 @@
 function getDefaultShoes() {
   return {
+<<<<<<< HEAD
     'imgUrl': '',
+=======
+    'imgUrl' : '',
+>>>>>>> 07293cee9dfd592dd5eb4289b9bf81a55ae55702
     'maSanPham': '',
     'tenSanPham': '',
     'tenThuongHieu': '',
@@ -12,7 +16,11 @@ function getDefaultShoes() {
 };
 let listShoes = [];
 let shoes1 = getDefaultShoes();
+<<<<<<< HEAD
 shoes1.imgUrl = 'image/Ultraboost.jpg';
+=======
+shoes1.imgUrl = "image/Ultraboost.jpg";
+>>>>>>> 07293cee9dfd592dd5eb4289b9bf81a55ae55702
 shoes1.maSanPham = 'SP001';
 shoes1.tenSanPham = 'Adidas Ultraboost';
 shoes1.tenThuongHieu = 'Adidas';
@@ -22,8 +30,13 @@ shoes1.giaBan = 3.95e6;
 shoes1.giaMua = 3.9e6;
 listShoes.push(shoes1);
 
+<<<<<<< HEAD
 let shoes2 = getDefaultShoes(); 
 shoes2.imgUrl = 'image/Alphaboost.png';
+=======
+let shoes2 = getDefaultShoes();
+shoes2.imgUrl="image/Alphaboost.png"
+>>>>>>> 07293cee9dfd592dd5eb4289b9bf81a55ae55702
 shoes2.maSanPham = 'SP002';
 shoes2.tenSanPham = 'Adidas Alphaboost';
 shoes2.tenThuongHieu = 'Adidas';
@@ -34,7 +47,11 @@ shoes2.giaMua = 3.9e6;
 listShoes.push(shoes2);
 
 let shoes3 = getDefaultShoes();
+<<<<<<< HEAD
 shoes3.imgUrl = 'image/Ultraboost.jpg';
+=======
+shoes3.imgUrl="image/epic.jfif"
+>>>>>>> 07293cee9dfd592dd5eb4289b9bf81a55ae55702
 shoes3.maSanPham = 'SP003';
 shoes3.tenSanPham = 'Nike Epic React';
 shoes3.tenThuongHieu = 'Nike';
@@ -45,7 +62,11 @@ shoes3.giaMua = 2.5e6;
 listShoes.push(shoes3);
 
 let shoes4 = getDefaultShoes();
+<<<<<<< HEAD
 shoes4.imgUrl = 'image/Ultraboost.jpg';
+=======
+shoes4.imgUrl = "image/nikeair.jpg"
+>>>>>>> 07293cee9dfd592dd5eb4289b9bf81a55ae55702
 shoes4.maSanPham = 'SP004';
 shoes4.tenSanPham = 'Nike Air max';
 shoes4.tenThuongHieu = 'Nike';
@@ -54,7 +75,7 @@ shoes4.soLuong = 20;
 shoes4.giaBan = 2.96e6;
 shoes4.giaMua = 2.9e6;
 listShoes.push(shoes4);
-
+//LocalStorage
 
 let checkExits = localStorage.getItem('Allshoes');
   if(checkExits === null){
@@ -161,7 +182,12 @@ function saveShoes(e) {
 
   }
 }
-
+function goToQLSP(){
+  window.location.href = ("QLSP.html");
+}
+function goToNhapHang(){
+  window.location.href = ("NhapHang.html");
+}
 /////////===========Xóa==========///////////
 function deleteClother(maSanPham) {
   if (confirm("Bạn muốn xóa SP này ?")) {
