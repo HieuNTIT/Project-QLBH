@@ -39,7 +39,7 @@
         <input type="text" class="form-control" id="searchName" placeholder="Tìm Theo Tên Sản Phẩm" ><br>
         <input type="text" class="form-control" id="searchBrand" placeholder="Tìm Theo Thương Hiệu"><br>
       </div>
-      <div class="col-9">
+      <div class="col-10">
         <div class="mb-3">
           <button class="btn btn-primary" data-toggle="modal" data-target="#add-shoes" id="button">Thêm Hàng
             Mới</button>
@@ -54,7 +54,9 @@
                 <th>Tên Sản Phẩm</th>
                 <th>Thương Hiệu</th>
                 <th>Size</th>
-                <th>Số Lượng</th> 
+                <th>Số Lượng</th>
+                <th>Giá Bán</th>
+                <th>Giá Mua</th>
                 <th>Lựa Chọn</th>
               </tr>
             </thead>
@@ -65,7 +67,8 @@
         </div>
       </div>
     </div>
-    <!-- Thêm Nhập Hàng-->
+    <!-- ===============Thêm Nhập Hàng=================-->
+
     <div class="modal fade" id="add-shoes">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -92,10 +95,6 @@
                   <option>Adidas</option>
                 </select>
               </div>
-              <!-- <div class="form-group">
-                  <label for="txtTHieu">Thương Hiệu:</label>
-                  <input type="text" required class="form-control" placeholder="Nhập Thương Hiệu" id="txtTHieu">
-                </div> -->
               <div class="form-group">
                 <label for="txtSize">Size:</label>
                 <input type="number" class="form-control" placeholder="Nhập size" id="txtSize">
@@ -103,6 +102,20 @@
               <div class="form-group">
                 <label for="txtSL">Số Lượng:</label>
                 <input type="number" class="form-control" placeholder="Nhập Số Lượng" id="txtSL">
+              </div>
+              <div class="form-group">
+                <label for="txtSL">Giá Bán:</label>
+                <input type="number" class="form-control" placeholder="Nhập Giá Bán" id="txtGiaBan">
+              </div>
+              <div class="form-group">
+                <label for="txtSL">Giá Mua:</label>
+                <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtGiaMua">
+              </div>
+              <div>
+                <label ng-attr-tabindex="{{$index == 0 ? '0' : undefined}}" for="new-files"ng-keyup="openFileDialog($event)" tabindex="0">
+                  <span class="kv2Btn">+ Thêm Ảnh</span>
+                  <img src="image" alt="">
+                </label>
               </div>
             </div>
             <!-- Modal footer -->
@@ -114,6 +127,9 @@
         </div>
       </div>
     </div>
+
+
+    <!-- ==================Phần Sửa===================== -->
 
     <div class="modal fade" id="EditShoes">
       <div class="modal-dialog modal-lg">
@@ -142,10 +158,6 @@
 
                 </select>
               </div>
-              <!-- <div class="form-group">
-                  <label for="txtEditTHieu">Thương Hiệu:</label>
-                  <input type="text" required class="form-control" placeholder="Nhập Thương Hiệu" id="txtEditTHieu">
-                </div> -->
               <div class="form-group">
                 <label for="txtEditSize">Size:</label>
                 <input type="number" class="form-control" placeholder="Nhập size" id="txtEditSize">
@@ -153,6 +165,14 @@
               <div class="form-group">
                 <label for="txtEditSL">Số Lượng:</label>
                 <input type="number" class="form-control" placeholder="Nhập Số Lượng" id="txtEditSL">
+              </div>
+              <div class="form-group">
+                <label for="txtSL">Giá Bán:</label>
+                <input type="number" class="form-control" placeholder="Nhập Giá Bán" id="txtEditGiaBan">
+              </div>
+              <div class="form-group">
+                <label for="txtSL">Giá Mua:</label>
+                <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtEditGiaMua">
               </div>
             </div>
             <!-- Modal footer -->

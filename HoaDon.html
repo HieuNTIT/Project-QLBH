@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LapHoaDon</title>
+    <link rel="stylesheet" href="HoaDon.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="avatar">
+            <img class="lo-go" src="image/logo.png" alt="logo">
+
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <img class="user-avatar" src="image/avatar.png" alt="avatar"> admin</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                    <a class="dropdown-item" href="login.html">Đăng Xuất</a>
+                </div>
+            </li>
+        </div>
+        <div class="navba">
+            <ul>
+                <li><a onclick="goToQLSP()">Quản Lí Sản Phẩm</a></li>
+                <li><a onclick="goToNhapHang()">Nhập Hàng</a></li>
+                <li><a href="lapHoaDon.html"></a>Lập Hóa Đơn</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <ul class="row" id="listShoes">
+
+                </ul>
+            </div>
+            <div class="col-4">
+                <input class="form-control form-control" type="text" placeholder="Nhập tên khách hàng">
+                <button class="btn btn-primary" id="buttonOK">Đồng ý</button>
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Tên SP</th>
+                                <th>SL</th>
+                                <th>TT</th>
+                            </tr>
+                        </thead>
+                        <tbody id = "Picked">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="HoaDon.js"></script>
+</body>
+
+</html>
