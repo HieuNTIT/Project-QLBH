@@ -12,7 +12,7 @@ for (let i = 0; i < listShoes.length; i++) {
     const element = listShoes[i];
     content += `
     <li class="col-12 col-md-6 col-lg-3">
-    <div>
+    <div onclick="clickOnProduct(${element.maSanPham})">
       <figure><img src=${element.imgUrl} class="img-responsive" alt=""></figure>
       <h6 id="nameSP">${element.tenSanPham}</h6>
       <h6 id="masp">MSP:${element.maSanPham}</h6>
@@ -21,9 +21,19 @@ for (let i = 0; i < listShoes.length; i++) {
     `
     document.getElementById('listShoes').innerHTML = content;
 }
-function clickOnProduct(maSanPham){
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        
+function clickOnProduct(code){
+    let k=0;
+    for (let i = 0; i < listShoes.length; i++) {
+        const element = listShoes[i];
+    if(code===element.maSanPham){
+    html = `
+        <tr>
+        <td>${element.tenSanPham} </td>
+        <td>${k}</td>
+        <td></td>
+        </tr>
+    `
+        document.getElementById("Picked").innerHTML +=html;
+    }
     }
 }
