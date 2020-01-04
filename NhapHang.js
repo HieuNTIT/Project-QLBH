@@ -22,5 +22,8 @@ for (let i = 0; i < listShoes.length; i++) {
     document.getElementById('listShoes').innerHTML = content;
 }
 function clickOnProduct(maSanPham){
-
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        
+    }
 }
