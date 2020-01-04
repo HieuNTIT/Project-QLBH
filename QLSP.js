@@ -41,7 +41,6 @@ shoes4.soLuong = 20;
 listShoes.push(shoes4);
 
 
-//===========localStorage=============//
 let checkExits = localStorage.getItem('Allshoes');
   if(checkExits === null){
     localStorage.setItem('Allshoes', JSON.stringify(listShoes));
@@ -95,9 +94,7 @@ function addShoes(e) {
     newShoes.size = Number(size);
     newShoes.soLuong = Number(soLuong);
     listShoes.push(newShoes);
-
     displayListShoes(listShoes);
-
     document.getElementById('frmnewShoes').reset();
     $('#add-shoes').modal('hide');
     localStorage.setItem('Allshoes', JSON.stringify(listShoes));
@@ -177,13 +174,29 @@ function EditShoes(maSanPham) {
 }
 
 
-function timKiem(){
-  let maSanPham = document.getElementById("timKiemMSP").value;
-  let data = timSanPham(maSanPham);
-  console.log("data: " + data);
-  displayListShoes(data);
-}
-function timSanPham(maSanPham){
-    //do somthing
-    return listShoes;
+//Tìm kiếm 
+function Search(){
+  let newList = [];
+  document.getElementById("status").innerHTML = "";
+  let codeSearch = document.getElementById("searchCode").value;
+  let nameSearch = document.getElementById("searchName").value;
+  let brandSearch = document.getElementById("searchBrand").value;
+  if (codeSearch == "" && nameSearch == "" && brandSearch == "") { 
+    displayListShoes(listShoes);
+    return;
+   }
+  for (let i = 0; i < listShoes.length; i++) {
+    const element = listShoes[i];
+  if((element.tenSanPham.toLowerCase().includes(nameSearch.toLowerCase()) || nameSearch =="")
+      &&  ((codeSearch.toLowerCase()===element.maSanPham.toLowerCase()) || codeSearch=="")
+      && (element.tenThuongHieu.toLowerCase().includes(brandSearch.toLowerCase()) || brandSearch == ""))
+      
+      { 
+        newList.push(element);
+      }
+    
+  }
+  displayListShoes(newList);
+  if (newList.length==0) document.getElementById("status").innerHTML = `Không tìm thấy sản phẩm!`;
+  if (newList.length!=0) document.getElementById("status").innerHTML =`Có ${newList.length} kết quả tìm được `;
 }
