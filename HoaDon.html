@@ -26,7 +26,7 @@
             <ul>
                 <li><a onclick="goToQLSP()">Quản Lí Sản Phẩm</a></li>
                 <li><a onclick="goToNhapHang()">Nhập Hàng</a></li>
-                <li><a href="lapHoaDon.html"></a>Lập Hóa Đơn</a></li>
+                <li><a href="lapHoaDon.html">Lập Hóa Đơn</a></li>
             </ul>
         </div>
         <div class="row">
@@ -36,7 +36,12 @@
                 </ul>
             </div>
             <div class="col-4">
-                <input class="form-control form-control" type="text" placeholder="Nhập tên khách hàng">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Nhập số điện thoại" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
+                    </div>
+                  </div>
                 <button class="btn btn-primary" id="buttonOK">Đồng ý</button>
                 <div>
                     <table class="table">
