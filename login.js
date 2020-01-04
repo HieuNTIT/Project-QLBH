@@ -13,7 +13,6 @@ function submit() {
     return false;
   }
   if (username == user && password == pass) {
-    alert("Đăng nhập thành công");
     window.location.href = "QLSP.html";
   } else {
     alert("sai Username hoặc Password");

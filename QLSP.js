@@ -56,7 +56,6 @@ shoes4.giaMua = 2.9e6;
 listShoes.push(shoes4);
 
 
-//===========localStorage=============//
 let checkExits = localStorage.getItem('Allshoes');
   if(checkExits === null){
     localStorage.setItem('Allshoes', JSON.stringify(listShoes));
@@ -118,9 +117,7 @@ function addShoes(e) {
     newShoes.giaMua = Number(giaMua);
 
     listShoes.push(newShoes);
-
     displayListShoes(listShoes);
-
     document.getElementById('frmnewShoes').reset();
     $('#add-shoes').modal('hide');
     localStorage.setItem('Allshoes', JSON.stringify(listShoes));
@@ -206,7 +203,7 @@ function EditShoes(maSanPham) {
 }
 
 
-//=============Tìm Kiếm====================//
+//Tìm kiếm 
 function Search(){
   let newList = [];
   document.getElementById("status").innerHTML = "";
