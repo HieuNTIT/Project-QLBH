@@ -168,12 +168,6 @@ function saveShoes(e) {
 
   }
 }
-function goToQLSP(){
-  window.location.href = ("QLSP.html");
-}
-function goToNhapHang(){
-  window.location.href = ("NhapHang.html");
-}
 /////////===========Xóa==========///////////
 function deleteClother(maSanPham) {
   if (confirm("Bạn muốn xóa SP này ?")) {

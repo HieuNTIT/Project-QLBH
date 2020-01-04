@@ -2,7 +2,7 @@ function goToQLSP(){
     window.location.href = ("QLSP.html");
 }
 function goToNhapHang(){
-window.location.href = ("GianHang.html");
+    window.location.href = ("GianHang.html");
 }
 //PARSEJSON-->
 let listShoes = JSON.parse(localStorage.getItem("Allshoes"));
