@@ -1,13 +1,6 @@
-function goToQLSP(){
-    window.location.href = ("QLSP.html");
-}
-function goToNhapHang(){
-window.location.href = ("NhapHang.html");
-}
-//PARSEJSON-->
-let listShoes = JSON.parse(localStorage.getItem("Allshoes"));
+let listShoes = JSON.parse(localStorage.getItem('Allshoes'));
 
-let content = ``;
+let content = '';
 for (let i = 0; i < listShoes.length; i++) {
     const element = listShoes[i];
     content += `
@@ -19,7 +12,6 @@ for (let i = 0; i < listShoes.length; i++) {
     </div>
     </li>
     `
-    document.getElementById('listShoes').innerHTML = content;
 }
 function clickOnProduct(code){
     let k=0;
