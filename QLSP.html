@@ -26,7 +26,7 @@
     </div>
     <div class="navba">
       <ul>
-        <li><a href="QLSP.html">Quản Lí Sản Phẩm</a></li>
+        <li class="nav-item active" ><a href="QLSP.html">Quản Lí Sản Phẩm</a></li>
         <li><a href="NhapHang.html">Nhập Hàng</a></li>
         <li><a href="lapHoaDon.html">Lập Hóa Đơn</a></li>
       </ul>
@@ -34,10 +34,10 @@
 
     <div class="row">
       <div class="col-3">
-        <button class="btn btn-primary" onclick="timKiem()">Tìm Kiếm</button><br><br>
-        <input type="text" class="form-control" placeholder="Tìm Theo Mã Sản Phẩm" id="timKiemMSP"><br>
-        <input type="text" class="form-control" placeholder="Tìm Theo Tên Sản Phẩm" id="timKiemTSP"><br>
-        <input type="text" class="form-control" placeholder="Tìm Theo Thương Hiệu" id="timKiemTH">
+        <button class="btn btn-primary" onclick="Search() ">Tìm Kiếm</button><br><br>
+        <input type="text" class="form-control" id="searchCode" placeholder="Tìm Theo Mã Sản Phẩm"><br>
+        <input type="text" class="form-control" id="searchName" placeholder="Tìm Theo Tên Sản Phẩm" ><br>
+        <input type="text" class="form-control" id="searchBrand" placeholder="Tìm Theo Thương Hiệu"><br>
       </div>
       <div class="col-9">
         <div class="mb-3">
@@ -58,7 +58,9 @@
                 <th>Lựa Chọn</th>
               </tr>
             </thead>
-            <tbody id="list-shoes"></tbody>
+            <tbody id="list-shoes">
+              <h2 id="status"></h2>
+            </tbody>
           </table>
         </div>
       </div>
