@@ -1,3 +1,9 @@
+function goToQLSP(){
+  window.location.href = ("QLSP.html");
+}
+function goToNhapHang(){
+window.location.href = ("GianHang.html");
+}
 function getDefaultShoes() {
   return {
     'imgUrl': '',
