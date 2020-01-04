@@ -1,5 +1,6 @@
 function getDefaultShoes() {
   return {
+    'imgUrl' : '',
     'maSanPham': '',
     'tenSanPham': '',
     'tenThuongHieu': '',
@@ -9,6 +10,7 @@ function getDefaultShoes() {
 };
 let listShoes = [];
 let shoes1 = getDefaultShoes();
+shoes1.imgUrl = "image/Ultraboost.jpg";
 shoes1.maSanPham = 'SP001';
 shoes1.tenSanPham = 'Adidas Ultraboost';
 shoes1.tenThuongHieu = 'Adidas';
@@ -17,6 +19,7 @@ shoes1.soLuong = 10;
 listShoes.push(shoes1);
 
 let shoes2 = getDefaultShoes();
+shoes2.imgUrl="image/Alphaboost.png"
 shoes2.maSanPham = 'SP002';
 shoes2.tenSanPham = 'Adidas Alphaboost';
 shoes2.tenThuongHieu = 'Adidas';
@@ -25,6 +28,7 @@ shoes2.soLuong = 15;
 listShoes.push(shoes2);
 
 let shoes3 = getDefaultShoes();
+shoes3.imgUrl="image/epic.jfif"
 shoes3.maSanPham = 'SP003';
 shoes3.tenSanPham = 'Nike Epic React';
 shoes3.tenThuongHieu = 'Nike';
@@ -33,13 +37,14 @@ shoes3.soLuong = 10;
 listShoes.push(shoes3);
 
 let shoes4 = getDefaultShoes();
+shoes4.imgUrl = "image/nikeair.jpg"
 shoes4.maSanPham = 'SP004';
 shoes4.tenSanPham = 'Nike Air max';
 shoes4.tenThuongHieu = 'Nike';
 shoes4.size = 43;
 shoes4.soLuong = 20;
 listShoes.push(shoes4);
-
+//LocalStorage
 
 let checkExits = localStorage.getItem('Allshoes');
   if(checkExits === null){
@@ -134,7 +139,12 @@ function saveShoes(e) {
 
   }
 }
-
+function goToQLSP(){
+  window.location.href = ("QLSP.html");
+}
+function goToNhapHang(){
+  window.location.href = ("NhapHang.html");
+}
 /////////===========Xóa==========///////////
 function deleteClother(maSanPham) {
   if (confirm("Bạn muốn xóa SP này ?")) {
