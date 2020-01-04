@@ -40,6 +40,15 @@ shoes4.size = 43;
 shoes4.soLuong = 20;
 listShoes.push(shoes4);
 
+
+//===========localStorage=============//
+let checkExits = localStorage.getItem('Allshoes');
+  if(checkExits === null){
+    localStorage.setItem('Allshoes', JSON.stringify(listShoes));
+  } else {
+    listShoes = JSON.parse(checkExits);
+  }
+
 function displayListShoes(list) {
   let body = document.getElementById('list-shoes');
   let s = '';
@@ -91,8 +100,10 @@ function addShoes(e) {
 
     document.getElementById('frmnewShoes').reset();
     $('#add-shoes').modal('hide');
+    localStorage.setItem('Allshoes', JSON.stringify(listShoes));
   }
 }
+
 function saveShoes(e) {
   e.preventDefault();
 
@@ -122,6 +133,8 @@ function saveShoes(e) {
 
     document.getElementById('frmEditShoes').reset();
     $('#EditShoes').modal('hide');
+    localStorage.setItem('Allshoes', JSON.stringify(listShoes));
+
   }
 }
 
@@ -136,6 +149,8 @@ function deleteClother(maSanPham) {
       }
     }
     displayListShoes(listShoes);
+    localStorage.setItem('Allshoes', JSON.stringify(listShoes));
+
   }
 }
 ////=============Sửa============////
@@ -157,4 +172,18 @@ function EditShoes(maSanPham) {
   document.getElementById('txtEditTHieu').value = currentShoes.tenThuongHieu;
   document.getElementById('txtEditSize').value = currentShoes.size;
   document.getElementById('txtEditSL').value = currentShoes.soLuong;
+
+  localStorage.setItem('Allshoes', JSON.stringify(listShoes));
+}
+
+
+function timKiem(){
+  let maSanPham = document.getElementById("timKiemMSP").value;
+  let data = timSanPham(maSanPham);
+  console.log("data: " + data);
+  displayListShoes(data);
+}
+function timSanPham(maSanPham){
+    //do somthing
+    return listShoes;
 }
