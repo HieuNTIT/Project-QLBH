@@ -2,194 +2,194 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Quản lý sản phẩm</title>
-  <link rel="stylesheet" href="QLSP.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="QLSP.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="avatar">
-      <img class="lo-go" src="image/logo.png" alt="logo">
+    <div class="container">
+        <div class="avatar">
+            <img class="lo-go" src="image/logo.png" alt="logo">
 
-      <li class="nav-item active dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          <img class="user-avatar" src="image/avatar.png" alt="avatar"> admin</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown04">
-          <a class="dropdown-item" href="login.html">Đăng Xuất</a>
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="user-avatar" src="image/avatar.png" alt="avatar"> admin</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                    <a class="dropdown-item" href="login.html">Đăng Xuất</a>
+                </div>
+            </li>
         </div>
-      </li>
-    </div>
-    <div class="navba">
-      <ul>
-        <li id="active" ><a onclick="goToQLSP()">Quản Lí Sản Phẩm</a></li>
-        <li><a onclick="goToNhapHang()">Gian Hàng</a></li>
-        <li><a href="lapHoaDon.html">Lập Hóa Đơn</a></li>
-      </ul>
-    </div>
+        <div class="navba">
+            <ul>
+                <li><a onclick="goToQLSP()">Quản Lí Sản Phẩm</a></li>
+                <li><a onclick="goToNhapHang()">Gian Hàng</a></li>
+                <li><a href="#">Lập Hóa Đơn</a></li>
+            </ul>
+        </div>
 
-    <div class="row">
-      <div class="col-2">
-        <button class="btn btn-primary" onclick="Search() ">Tìm Kiếm</button><br><br>
-        <input type="text" class="form-control" id="searchCode" placeholder="Tìm Theo Mã Sản Phẩm"><br>
-        <input type="text" class="form-control" id="searchName" placeholder="Tìm Theo Tên Sản Phẩm" ><br>
-        <input type="text" class="form-control" id="searchBrand" placeholder="Tìm Theo Thương Hiệu"><br>
-      </div>
-      <div class="col">
-        <div class="mb-3">
-          <button class="btn btn-primary" data-toggle="modal" data-target="#add-shoes" id="button">Thêm Hàng
-            Mới</button>
-          <h4>Quản Lí Sản Phẩm</h4>
-        </div>
-        <div>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>STT</th>
-                <th>Mã Sản Phẩm</th>
-                <th>Tên Sản Phẩm</th>
-                <th>Thương Hiệu</th>
-                <th>Size</th>
-                <th>Số Lượng</th>
-                <th>Giá Bán</th>
-                <th>Giá Mua</th>
-                <th>Lựa Chọn</th>
-              </tr>
-            </thead>
-            <tbody id="list-shoes">
-              <h2 id="status"></h2>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <!-- ===============Thêm Nhập Hàng=================-->
-
-    <div class="modal fade" id="add-shoes">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <form id="frmnewShoes" onsubmit="addShoes(event)">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Nhập Sản Phẩm Mới</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-primary" onclick="Search() ">Tìm Kiếm</button><br><br>
+                <input type="text" class="form-control" id="searchCode" placeholder="Tìm Theo Mã Sản Phẩm"><br>
+                <input type="text" class="form-control" id="searchName" placeholder="Tìm Theo Tên Sản Phẩm"><br>
+                <input type="text" class="form-control" id="searchBrand" placeholder="Tìm Theo Thương Hiệu"><br>
             </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="txtMSP">Mã Sản Phẩm:</label>
-                <input type="text" required class="form-control" placeholder="Nhập Mã Sản Phẩm" id="txtMSP">
-              </div>
-              <div class="form-group">
-                <label for="txtTSP">Tên Sản Phẩm:</label>
-                <input type="text" required class="form-control" placeholder="Nhập Tên Sản Phẩm" id="txtTSP">
-              </div>
-              <div class="form-group">
-                <label for="txtTHieu">Thương Hiệu:</label>
-                <select class="form-control" placeholder="Nhập Thương Hiệu" id="txtTHieu">
+            <div class="col">
+                <div class="mb-3">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#add-shoes" id="button">Thêm Hàng
+            Mới</button>
+                    <h4>Quản Lí Sản Phẩm</h4>
+                </div>
+                <div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã Sản Phẩm</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Thương Hiệu</th>
+                                <th>Size</th>
+                                <th>Số Lượng</th>
+                                <th>Giá Bán</th>
+                                <th>Giá Mua</th>
+                                <th>Lựa Chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody id="list-shoes">
+                            <h2 id="status"></h2>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- ===============Thêm Nhập Hàng=================-->
+
+        <div class="modal fade" id="add-shoes">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form id="frmnewShoes" onsubmit="addShoes(event)">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nhập Sản Phẩm Mới</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="txtMSP">Mã Sản Phẩm:</label>
+                                <input type="text" required class="form-control" placeholder="Nhập Mã Sản Phẩm" id="txtMSP">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtTSP">Tên Sản Phẩm:</label>
+                                <input type="text" required class="form-control" placeholder="Nhập Tên Sản Phẩm" id="txtTSP">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtTHieu">Thương Hiệu:</label>
+                                <select class="form-control" placeholder="Nhập Thương Hiệu" id="txtTHieu">
                   <option>Nike</option>
                   <option>Adidas</option>
                 </select>
-              </div>
-              <div class="form-group">
-                <label for="txtSize">Size:</label>
-                <input type="number" class="form-control" placeholder="Nhập size" id="txtSize">
-              </div>
-              <div class="form-group">
-                <label for="txtSL">Số Lượng:</label>
-                <input type="number" class="form-control" placeholder="Nhập Số Lượng" id="txtSL">
-              </div>
-              <div class="form-group">
-                <label for="txtSL">Giá Bán:</label>
-                <input type="number" class="form-control" placeholder="Nhập Giá Bán" id="txtGiaBan">
-              </div>
-              <div class="form-group">
-                <label for="txtSL">Giá Mua:</label>
-                <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtGiaMua">
-              </div>
-              <div>
-                <label ng-attr-tabindex="{{$index == 0 ? '0' : undefined}}" for="new-files"ng-keyup="openFileDialog($event)" tabindex="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSize">Size:</label>
+                                <input type="number" class="form-control" placeholder="Nhập size" id="txtSize">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSL">Số Lượng:</label>
+                                <input type="number" class="form-control" placeholder="Nhập Số Lượng" id="txtSL">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSL">Giá Bán:</label>
+                                <input type="number" class="form-control" placeholder="Nhập Giá Bán" id="txtGiaBan">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSL">Giá Mua:</label>
+                                <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtGiaMua">
+                            </div>
+                            <div>
+                                <label ng-attr-tabindex="{{$index == 0 ? '0' : undefined}}" for="new-files" ng-keyup="openFileDialog($event)" tabindex="0">
                   <span class="kv2Btn">+ Thêm Ảnh</span>
                   <img src="image" alt="">
                 </label>
-              </div>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Save</button>
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-success">Save</button>
-              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-            </div>
-          </form>
         </div>
-      </div>
-    </div>
 
 
-    <!-- ==================Phần Sửa===================== -->
+        <!-- ==================Phần Sửa===================== -->
 
-    <div class="modal fade" id="EditShoes">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <form id="frmEditShoes" onsubmit="saveShoes(event)">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Nhập Sản Phẩm Mới</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="txtEditMSP">Mã Sản Phẩm:</label>
-                <input type="text" required class="form-control" placeholder="Nhập Mã Sản Phẩm" id="txtEditMSP">
-              </div>
-              <div class="form-group">
-                <label for="txtEditTSP">Tên Sản Phẩm:</label>
-                <input type="text" required class="form-control" placeholder="Nhập Tên Sản Phẩm" id="txtEditTSP">
-              </div>
-              <div class="form-group">
-                <label for="txtEditTHieu">Thương Hiệu:</label>
-                <select class="form-control" id="txtEditTHieu">
+        <div class="modal fade" id="EditShoes">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form id="frmEditShoes" onsubmit="saveShoes(event)">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nhập Sản Phẩm Mới</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="txtEditMSP">Mã Sản Phẩm:</label>
+                                <input type="text" required class="form-control" placeholder="Nhập Mã Sản Phẩm" id="txtEditMSP">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEditTSP">Tên Sản Phẩm:</label>
+                                <input type="text" required class="form-control" placeholder="Nhập Tên Sản Phẩm" id="txtEditTSP">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEditTHieu">Thương Hiệu:</label>
+                                <select class="form-control" id="txtEditTHieu">
                   <option>Nike</option>
                   <option>Adidas</option>
 
                 </select>
-              </div>
-              <div class="form-group">
-                <label for="txtEditSize">Size:</label>
-                <input type="number" class="form-control" placeholder="Nhập size" id="txtEditSize">
-              </div>
-              <div class="form-group">
-                <label for="txtEditSL">Số Lượng:</label>
-                <input type="number" class="form-control" placeholder="Nhập Số Lượng" id="txtEditSL">
-              </div>
-              <div class="form-group">
-                <label for="txtSL">Giá Bán:</label>
-                <input type="number" class="form-control" placeholder="Nhập Giá Bán" id="txtEditGiaBan">
-              </div>
-              <div class="form-group">
-                <label for="txtSL">Giá Mua:</label>
-                <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtEditGiaMua">
-              </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEditSize">Size:</label>
+                                <input type="number" class="form-control" placeholder="Nhập size" id="txtEditSize">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEditSL">Số Lượng:</label>
+                                <input type="number" class="form-control" placeholder="Nhập Số Lượng" id="txtEditSL">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSL">Giá Bán:</label>
+                                <input type="number" class="form-control" placeholder="Nhập Giá Bán" id="txtEditGiaBan">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSL">Giá Mua:</label>
+                                <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtEditGiaMua">
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Save</button>
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-success">Save</button>
-              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-            </div>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="QLSP.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="QLSP.js"></script>
 </body>
 
 </html>
