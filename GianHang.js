@@ -2,6 +2,11 @@ function goToQLSP() {
     window.location.href = ("QLSP.html");
 }
 
+// function goToInHoaDon() {
+//     window.location.href = ("inHoaDon.html");
+
+// }
+
 function goToNhapHang() {
     window.location.href = ("GianHang.html");
 }
@@ -21,6 +26,15 @@ function getDefaultShoes() {
         'giaMua': 0,
     };
 };
+
+function getDefaulCustomer() {
+    return {
+        'tenKhachHang': '',
+        'diaChi': '',
+        'soDienThoai': '',
+        'hangHoa': '',
+    }
+}
 
 let content = ``;
 for (let i = 0; i < listShoes.length; i++) {
@@ -48,8 +62,8 @@ function display(list) {
             let ds = `
     <tr>
     <td>${shoe.tenSanPham} </td>
-    <td> 1 </td>
-    <td>${shoe.giaBan}</td>
+    <td> <input type = 'number' id = 'soluong' class="form-control form-control-sm" value="1">  </td>
+    <td>${Number(shoe.giaBan * document.getElementById('soluong').value)} </td>
     </tr>
     `;
             s += ds;
@@ -57,17 +71,30 @@ function display(list) {
     }
     newDs.innerHTML = s;
 }
+let newCustomer = [];
 
+function openProfile() {
+    $('#khach-hang').modal('show');
+    let profile = getDefaulCustomer();
+    profile.tenKhachHang = document.getElementById('addname');
+    profile.soDienThoai = document.getElementById('phone-number');
+    profile.diaChi = document.getElementById('address');
+    newCustomer.push(profile);
+}
+localStorage.setItem('customer', JSON.stringify(newCustomer));
 
 function checkOnProduct(maSanPham) {
-    let k = 0;
     for (let i = 0; i < listShoes.length; i++) {
         const element = listShoes[i];
         var checking = document.getElementById(`${element.maSanPham}`);
         if (maSanPham === element.maSanPham) {
             if (checking.checked == true) {
-                newList.push(element);
-            } else newList.splice(`${element}`, 1);
+                newList[i + 100] = element;
+            }
+            if (checking.checked == false) {
+                newList.splice(i + 100, 1)
+                i++;
+            };
         }
         display(newList);
     }
