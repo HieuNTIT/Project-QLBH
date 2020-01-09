@@ -2,6 +2,10 @@ function goToQLSP() {
     window.location.href = ("QLSP.html");
 }
 
+function save() {
+    window.location.href = ("lapHoaDon.html");
+}
+
 // function goToInHoaDon() {
 //     window.location.href = ("inHoaDon.html");
 
@@ -62,8 +66,8 @@ function display(list) {
             let ds = `
     <tr>
     <td>${shoe.tenSanPham} </td>
-    <td> <input type = 'number' id = 'number' onchange = "changeAmount" class="form-control form-control-sm"  value="${shoe.soLuongmua}">  </td>
-    <td id = "thanhtien">${shoe.giaBan * shoe.soLuongmua} </td>
+    <td> <input type = 'number'  class="form-control form-control-sm"  value="1">  </td>
+    <td>${shoe.giaBan} </td>
     </tr>
     `;
             s += ds;
@@ -72,9 +76,9 @@ function display(list) {
     newDs.innerHTML = s;
 }
 
-function changeAmount() {
-    document.getElementById("thanhtien").innerHTML = (document.getElementById("thanhtien").innerHTML * document.getElementById("number").value)
-}
+// function changeAmount() {
+//     document.getElementById("thanhtien").innerHTML = (document.getElementById("thanhtien").innerHTML * document.getElementById("number").value)
+// }
 let newCustomer = [];
 
 function openProfile() {

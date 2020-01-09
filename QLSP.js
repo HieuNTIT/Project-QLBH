@@ -34,7 +34,6 @@ listShoes.push(shoes1);
 
 let shoes2 = getDefaultShoes();
 shoes2.imgUrl = 'image/Alphaboost.png';
-shoes2.imgUrl = "image/Alphaboost.png"
 shoes2.maSanPham = 'SP002';
 shoes2.tenSanPham = 'Adidas Alphaboost';
 shoes2.tenThuongHieu = 'Adidas';
@@ -46,7 +45,7 @@ shoes2.soLuongmua = 1;
 listShoes.push(shoes2);
 
 let shoes3 = getDefaultShoes();
-shoes3.imgUrl = 'image/Ultraboost.jpg';
+shoes3.imgUrl = 'image/epic.jfif';
 shoes3.maSanPham = 'SP003';
 shoes3.tenSanPham = 'Nike Epic React';
 shoes3.tenThuongHieu = 'Nike';
@@ -59,7 +58,7 @@ shoes3.soLuongmua = 1;
 listShoes.push(shoes3);
 
 let shoes4 = getDefaultShoes();
-shoes4.imgUrl = 'image/Ultraboost.jpg';
+shoes4.imgUrl = 'image/nikeair.jpg';
 shoes4.maSanPham = 'SP004';
 shoes4.tenSanPham = 'Nike Air max';
 shoes4.tenThuongHieu = 'Nike';
@@ -70,6 +69,56 @@ shoes4.giaMua = 2.9e6;
 shoes4.soLuongmua = 1;
 
 listShoes.push(shoes4);
+
+let shoes5 = getDefaultShoes();
+shoes5.imgUrl = 'image/nikeair.jpg';
+shoes5.maSanPham = 'SP005';
+shoes5.tenSanPham = 'Nike Air max';
+shoes5.tenThuongHieu = 'Nike';
+shoes5.size = 43;
+shoes5.soLuong = 20;
+shoes5.giaBan = 2.96e6;
+shoes5.giaMua = 2.9e6;
+shoes5.soLuongmua = 1;
+
+listShoes.push(shoes5);
+
+let shoes6 = getDefaultShoes();
+shoes6.imgUrl = 'image/epic.jfif';
+shoes6.maSanPham = 'SP006';
+shoes6.tenSanPham = 'Nike Epic React';
+shoes6.tenThuongHieu = 'Nike';
+shoes6.size = 42;
+shoes6.soLuong = 10;
+shoes6.giaBan = 2.6e6;
+shoes6.giaMua = 2.5e6;
+shoes6.soLuongmua = 1;
+
+listShoes.push(shoes6);
+
+let shoes7 = getDefaultShoes();
+shoes7.imgUrl = 'image/Alphaboost.png';
+shoes7.maSanPham = 'SP007';
+shoes7.tenSanPham = 'Adidas Alphaboost';
+shoes7.tenThuongHieu = 'Adidas';
+shoes7.size = 41;
+shoes7.soLuong = 15;
+shoes7.giaBan = 3.95e6;
+shoes7.giaMua = 3.9e6;
+shoes7.soLuongmua = 1;
+listShoes.push(shoes7);
+
+let shoes8 = getDefaultShoes();
+shoes8.imgUrl = "image/Ultraboost.jpg";
+shoes8.maSanPham = 'SP008';
+shoes8.tenSanPham = 'Adidas Ultraboost';
+shoes8.tenThuongHieu = 'Adidas';
+shoes8.size = 40;
+shoes8.soLuong = 10;
+shoes8.giaBan = 3.95e6;
+shoes8.giaMua = 3.9e6;
+shoes8.soLuongmua = 1;
+listShoes.push(shoes8);
 //LocalStorage
 
 let checkExits = localStorage.getItem('Allshoes');
