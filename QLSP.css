@@ -1,58 +1,58 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.lo-go{
+.lo-go {
     width: 150px;
 }
-.avatar{
+
+.avatar {
     border: 1px solid black;
 }
-.avatar li{
+
+.avatar li {
     list-style: none;
     float: right;
 }
-.user-avatar{
+
+.user-avatar {
     width: 30px;
 }
-#active{
-    color: aqua;
-}
+
 .avatar li a {
     color: black;
     font-weight: 600;
 }
-h4{
+
+h4 {
     color: brown;
 }
-.navba ul{
+
+.navba ul {
     list-style-type: none;
     list-style: none;
     display: flex;
     padding: 0;
     text-align: center;
 }
-.navba ul li{
+
+.navba ul li {
     flex: 1;
-    background-color:teal;
+    background-color: teal;
 }
 
-.navba ul li:hover{
+.navba ul li:hover {
     background-color: gray;
 }
 
-.navba ul li a{
-   color: #ffffff;
-   text-transform: uppercase;
-   text-decoration: none;
-   padding: 10px;
-   display: block;
-   
-}
-.navba ul li a:hover{
-    color: #000000;
-}
-#button{
-    float: right;
+.navba ul li a {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
 }
 
+.navba ul li a:hover {
+    color: #000000;
+}
+
+#button {
+    float: right;
+}

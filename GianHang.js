@@ -1,40 +1,74 @@
-function goToQLSP(){
+function goToQLSP() {
     window.location.href = ("QLSP.html");
 }
-function goToNhapHang(){
-window.location.href = ("GianHang.html");
+
+function goToNhapHang() {
+    window.location.href = ("GianHang.html");
 }
 
 //PARSEJSON-->
 let listShoes = JSON.parse(localStorage.getItem("Allshoes"));
+
+function getDefaultShoes() {
+    return {
+        'imgUrl': '',
+        'maSanPham': '',
+        'tenSanPham': '',
+        'tenThuongHieu': '',
+        'size': 0,
+        'soLuong': 0,
+        'giaBan': 0,
+        'giaMua': 0,
+    };
+};
 
 let content = ``;
 for (let i = 0; i < listShoes.length; i++) {
     const element = listShoes[i];
     content += `
     <li class="col-12 col-md-6 col-lg-3">
-    <div onclick="clickOnProduct(${element.maSanPham})">
+    <div >
       <figure><img src=${element.imgUrl} class="img-responsive" alt=""></figure>
-      <h6 id="nameSP">${element.tenSanPham}</h6>
-      <h6 id="masp">MSP:${element.maSanPham}</h6>
+      <form>
+        <input type="checkbox"  onchange = "checkOnProduct('${element.maSanPham}')" id=${element.maSanPham}> ${element.tenSanPham}
+      </form>
     </div>
     </li>
     `
     document.getElementById('listShoes').innerHTML = content;
 }
-function clickOnProduct(code){
-    let k=0;
+var newList = [];
+
+function display(list) {
+    let s = '';
+    let newDs = document.getElementById("Picked");
+    for (let i = 0; i < list.length; i++) {
+        const shoe = list[i];
+        if (shoe != null) {
+            let ds = `
+    <tr>
+    <td>${shoe.tenSanPham} </td>
+    <td> 1 </td>
+    <td>${shoe.giaBan}</td>
+    </tr>
+    `;
+            s += ds;
+        }
+    }
+    newDs.innerHTML = s;
+}
+
+
+function checkOnProduct(maSanPham) {
+    let k = 0;
     for (let i = 0; i < listShoes.length; i++) {
         const element = listShoes[i];
-    if(code===element.maSanPham){
-    html = `
-        <tr>
-        <td>${element.tenSanPham} </td>
-        <td>${k}</td>
-        <td></td>
-        </tr>
-    `
-        document.getElementById("Picked").innerHTML +=html;
-    }
+        var checking = document.getElementById(`${element.maSanPham}`);
+        if (maSanPham === element.maSanPham) {
+            if (checking.checked == true) {
+                newList.push(element);
+            } else newList.splice(`${element}`, 1);
+        }
+        display(newList);
     }
 }
