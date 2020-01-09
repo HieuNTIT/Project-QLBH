@@ -62,8 +62,8 @@ function display(list) {
             let ds = `
     <tr>
     <td>${shoe.tenSanPham} </td>
-    <td> <input type = 'number' id = 'soluong' class="form-control form-control-sm" value="1">  </td>
-    <td>${Number(shoe.giaBan * document.getElementById('soluong').value)} </td>
+    <td> <input type = 'number' id = 'number' onchange = "changeAmount" class="form-control form-control-sm"  value="${shoe.soLuongmua}">  </td>
+    <td id = "thanhtien">${shoe.giaBan * shoe.soLuongmua} </td>
     </tr>
     `;
             s += ds;
@@ -71,17 +71,15 @@ function display(list) {
     }
     newDs.innerHTML = s;
 }
+
+function changeAmount() {
+    document.getElementById("thanhtien").innerHTML = (document.getElementById("thanhtien").innerHTML * document.getElementById("number").value)
+}
 let newCustomer = [];
 
 function openProfile() {
     $('#khach-hang').modal('show');
-    let profile = getDefaulCustomer();
-    profile.tenKhachHang = document.getElementById('addname');
-    profile.soDienThoai = document.getElementById('phone-number');
-    profile.diaChi = document.getElementById('address');
-    newCustomer.push(profile);
 }
-localStorage.setItem('customer', JSON.stringify(newCustomer));
 
 function checkOnProduct(maSanPham) {
     for (let i = 0; i < listShoes.length; i++) {
@@ -98,4 +96,9 @@ function checkOnProduct(maSanPham) {
         }
         display(newList);
     }
+}
+
+function inHoaDon() {
+    let nameCustomer = document.getElementById('addname').value;
+    document.getElementById('nameCustomer').innerHTML = nameCustomer;
 }
