@@ -16,7 +16,8 @@
             <img class="lo-go" src="image/logo.png" alt="logo">
 
             <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     <img class="user-avatar" src="image/avatar.png" alt="avatar"> admin</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
                     <a class="dropdown-item" href="login.html">Đăng Xuất</a>
@@ -27,7 +28,7 @@
             <ul>
                 <li><a onclick="goToQLSP()">Quản Lí Sản Phẩm</a></li>
                 <li><a onclick="goToNhapHang()">Gian Hàng</a></li>
-                <li><a href="#">Lập Hóa Đơn</a></li>
+                <li><a onclick="goToLapHD()">Lập Hóa Đơn</a></li>
             </ul>
         </div>
 
@@ -41,7 +42,7 @@
             <div class="col">
                 <div class="mb-3">
                     <button class="btn btn-primary" data-toggle="modal" data-target="#add-shoes" id="button">Thêm Hàng
-            Mới</button>
+                        Mới</button>
                     <h4>Quản Lí Sản Phẩm</h4>
                 </div>
                 <div>
@@ -81,39 +82,44 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="txtMSP">Mã Sản Phẩm:</label>
-                                <input type="text" required class="form-control" placeholder="Nhập Mã Sản Phẩm" id="txtMSP">
+                                <input type="text" required class="form-control" placeholder="Nhập Mã Sản Phẩm"
+                                    id="txtMSP">
                             </div>
                             <div class="form-group">
                                 <label for="txtTSP">Tên Sản Phẩm:</label>
-                                <input type="text" required class="form-control" placeholder="Nhập Tên Sản Phẩm" id="txtTSP">
+                                <input type="text" required class="form-control" placeholder="Nhập Tên Sản Phẩm"
+                                    id="txtTSP">
                             </div>
                             <div class="form-group">
                                 <label for="txtTHieu">Thương Hiệu:</label>
                                 <select class="form-control" placeholder="Nhập Thương Hiệu" id="txtTHieu">
-                  <option>Nike</option>
-                  <option>Adidas</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="txtSize">Size:</label>
-                <input type="number" class="form-control" placeholder="Nhập size" id="txtSize">
-              </div>
-              <div class="form-group">
-                <label for="txtSL">Số Lượng:</label>
-                <input type="number" class="form-control" placeholder="Nhập Số Lượng" id="txtSL">
-              </div>
-              <div class="form-group">
-                <label for="txtSL">Giá Bán:</label>
-                <input type="number" class="form-control" placeholder="Nhập Giá Bán" id="txtGiaBan">
-              </div>
-              <div class="form-group">
-                <label for="txtSL">Giá Mua:</label>
-                <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtGiaMua">
-              </div>
+                                    <option>Nike</option>
+                                    <option>Adidas</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSize">Size:</label>
+                                <input type="number" class="form-control" placeholder="Nhập size" id="txtSize">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSL">Số Lượng:</label>
+                                <input type="number" class="form-control" placeholder="Nhập Số Lượng" id="txtSL">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSL">Giá Bán:</label>
+                                <input type="number" class="form-control" placeholder="Nhập Giá Bán" id="txtGiaBan">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSL">Giá Mua:</label>
+                                <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtGiaMua">
+                            </div>
 
-              <div class="form-group">
-                <label for="txtImg">Thêm ảnh:</label>
-                <input type="file" name="image" id="fileToUpload">
+                            <!-- <input type='file' onchange="readURL(this);" />
+                            <img id="fileToUpload" src="http://placehold.it/180" alt="your image" /> -->
+
+                            <div class="form-group">
+                                <label for="txtImg">Thêm ảnh:</label>
+                                <input type="file" name="image" id="fileToUpload">
                             </div>
                         </div>
                         <!-- Modal footer -->
@@ -143,19 +149,21 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="txtEditMSP">Mã Sản Phẩm:</label>
-                                <input type="text" required class="form-control" placeholder="Nhập Mã Sản Phẩm" id="txtEditMSP">
+                                <input type="text" required class="form-control" placeholder="Nhập Mã Sản Phẩm"
+                                    id="txtEditMSP">
                             </div>
                             <div class="form-group">
                                 <label for="txtEditTSP">Tên Sản Phẩm:</label>
-                                <input type="text" required class="form-control" placeholder="Nhập Tên Sản Phẩm" id="txtEditTSP">
+                                <input type="text" required class="form-control" placeholder="Nhập Tên Sản Phẩm"
+                                    id="txtEditTSP">
                             </div>
                             <div class="form-group">
                                 <label for="txtEditTHieu">Thương Hiệu:</label>
                                 <select class="form-control" id="txtEditTHieu">
-                  <option>Nike</option>
-                  <option>Adidas</option>
+                                    <option>Nike</option>
+                                    <option>Adidas</option>
 
-                </select>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="txtEditSize">Size:</label>
@@ -173,6 +181,10 @@
                                 <label for="txtSL">Giá Mua:</label>
                                 <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtEditGiaMua">
                             </div>
+                            <div class="form-group">
+                                <label for="txtImg">Sửa ảnh:</label>
+                                <input type="file" name="image" id="txtfileToUpload">
+                            </div>
                         </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
@@ -181,10 +193,6 @@
                         </div>
                     </form>
                 </div>
-              <div class="form-group">
-                <label for="txtImg">Sửa ảnh:</label>
-                <input type="file" name="image" id="txtfileToUpload">
-              </div>
             </div>
         </div>
     </div>

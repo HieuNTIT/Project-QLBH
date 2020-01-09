@@ -4,6 +4,9 @@ function goToQLSP() {
 function goToNhapHang() {
   window.location.href = ("GianHang.html");
 }
+function goToLapHD() {
+  window.location.href = ("lapHoaDon.html");
+}
 function getDefaultShoes() {
   return {
     'imgUrl': '',
@@ -238,3 +241,16 @@ function Search() {
   if (newList.length == 0) document.getElementById("status").innerHTML = `Không tìm thấy sản phẩm!`;
   if (newList.length != 0) document.getElementById("status").innerHTML = `Có ${newList.length} kết quả tìm được `;
 }
+
+// function readURL(input) {
+//             if (input.files && input.files[0]) {
+//                 var reader = new FileReader();
+
+//                 reader.onload = function (e) {
+//                     $('#fileToUpload')
+//                         .attr('src', e.target.result);
+//                 };
+
+//                 reader.readAsDataURL(input.files[0]);
+//             }
+//         }
