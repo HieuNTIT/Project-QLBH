@@ -110,12 +110,12 @@
                 <label for="txtSL">Giá Mua:</label>
                 <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtGiaMua">
               </div>
-              <div>
-                <label ng-attr-tabindex="{{$index == 0 ? '0' : undefined}}" for="new-files"ng-keyup="openFileDialog($event)" tabindex="0">
-                  <span class="kv2Btn">+ Thêm Ảnh</span>
-                  <img src="image" alt="">
-                </label>
+
+              <div class="form-group">
+                <label for="txtImg">Thêm ảnh:</label>
+                <input type="file" name="image" id="fileToUpload">
               </div>
+
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -172,6 +172,10 @@
               <div class="form-group">
                 <label for="txtSL">Giá Mua:</label>
                 <input type="number" class="form-control" placeholder="Nhập Giá Mua" id="txtEditGiaMua">
+              </div>
+              <div class="form-group">
+                <label for="txtImg">Sửa ảnh:</label>
+                <input type="file" name="image" id="txtfileToUpload">
               </div>
             </div>
             <!-- Modal footer -->

@@ -1,8 +1,8 @@
-function goToQLSP(){
+function goToQLSP() {
   window.location.href = ("QLSP.html");
 }
-function goToNhapHang(){
-window.location.href = ("GianHang.html");
+function goToNhapHang() {
+  window.location.href = ("GianHang.html");
 }
 function getDefaultShoes() {
   return {
@@ -12,8 +12,8 @@ function getDefaultShoes() {
     'tenThuongHieu': '',
     'size': 0,
     'soLuong': 0,
-    'giaBan':0,
-    'giaMua':0,
+    'giaBan': 0,
+    'giaMua': 0,
   };
 };
 let listShoes = [];
@@ -28,9 +28,9 @@ shoes1.giaBan = 3.95e6;
 shoes1.giaMua = 3.9e6;
 listShoes.push(shoes1);
 
-let shoes2 = getDefaultShoes(); 
+let shoes2 = getDefaultShoes();
 shoes2.imgUrl = 'image/Alphaboost.png';
-shoes2.imgUrl="image/Alphaboost.png"
+shoes2.imgUrl = "image/Alphaboost.png"
 shoes2.maSanPham = 'SP002';
 shoes2.tenSanPham = 'Adidas Alphaboost';
 shoes2.tenThuongHieu = 'Adidas';
@@ -64,11 +64,11 @@ listShoes.push(shoes4);
 //LocalStorage
 
 let checkExits = localStorage.getItem('Allshoes');
-  if(checkExits === null){
-    localStorage.setItem('Allshoes', JSON.stringify(listShoes));
-  } else {
-    listShoes = JSON.parse(checkExits);
-  }
+if (checkExits === null) {
+  localStorage.setItem('Allshoes', JSON.stringify(listShoes));
+} else {
+  listShoes = JSON.parse(checkExits);
+}
 
 function displayListShoes(list) {
   let body = document.getElementById('list-shoes');
@@ -107,6 +107,7 @@ function addShoes(e) {
   let soLuong = Number(document.getElementById('txtSL').value);
   let giaBan = Number(document.getElementById('txtGiaBan').value);
   let giaMua = Number(document.getElementById('txtGiaMua').value);
+  let imgUrl = document.getElementById('fileToUpload').value;
   if (size <= 30) {
     alert("Mời nhập size")
   }
@@ -122,6 +123,7 @@ function addShoes(e) {
     newShoes.soLuong = Number(soLuong);
     newShoes.giaBan = Number(giaBan);
     newShoes.giaMua = Number(giaMua);
+    newShoes.imgUrl = imgUrl;
 
     listShoes.push(newShoes);
     displayListShoes(listShoes);
@@ -141,6 +143,7 @@ function saveShoes(e) {
   let soLuong = document.getElementById('txtEditSL').value;
   let giaBan = document.getElementById('txtEditGiaBan').value;
   let giaMua = document.getElementById('txtEditGiaMua').value;
+  let imgUrl = document.getElementById('txtfileToUpload').value;
   if (size <= 30) {
     alert("Mời nhập size")
   }
@@ -156,6 +159,7 @@ function saveShoes(e) {
         shoess.soLuong = soLuong;
         shoess.giaBan = giaBan;
         shoess.giaMua = giaMua;
+        shoess.imgUrl = imgUrl;
         break;
       }
     }
@@ -167,12 +171,6 @@ function saveShoes(e) {
     localStorage.setItem('Allshoes', JSON.stringify(listShoes));
 
   }
-}
-function goToQLSP(){
-  window.location.href = ("QLSP.html");
-}
-function goToNhapHang(){
-  window.location.href = ("NhapHang.html");
 }
 /////////===========Xóa==========///////////
 function deleteClother(maSanPham) {
@@ -210,34 +208,33 @@ function EditShoes(maSanPham) {
   document.getElementById('txtEditSL').value = currentShoes.soLuong;
   document.getElementById('txtEditGiaBan').value = currentShoes.giaBan;
   document.getElementById('txtEditGiaMua').value = currentShoes.giaMua;
+  document.getElementById('txtfileToUpload').value = currentShoes.imgUrl;
 
   localStorage.setItem('Allshoes', JSON.stringify(listShoes));
 }
 
 
 //=============Tìm Kiếm====================//
-function Search(){
+function Search() {
   let newList = [];
   document.getElementById("status").innerHTML = "";
   let codeSearch = document.getElementById("searchCode").value;
   let nameSearch = document.getElementById("searchName").value;
   let brandSearch = document.getElementById("searchBrand").value;
-  if (codeSearch == "" && nameSearch == "" && brandSearch == "") { 
+  if (codeSearch == "" && nameSearch == "" && brandSearch == "") {
     displayListShoes(listShoes);
     return;
-   }
+  }
   for (let i = 0; i < listShoes.length; i++) {
     const element = listShoes[i];
-  if((element.tenSanPham.toLowerCase().includes(nameSearch.toLowerCase()) || nameSearch =="")
-      &&  ((codeSearch.toLowerCase()===element.maSanPham.toLowerCase()) || codeSearch=="")
-      && (element.tenThuongHieu.toLowerCase().includes(brandSearch.toLowerCase()) || brandSearch == ""))
-      
-      { 
-        newList.push(element);
-      }
-    
+    if ((element.tenSanPham.toLowerCase().includes(nameSearch.toLowerCase()) || nameSearch == "")
+      && ((codeSearch.toLowerCase() === element.maSanPham.toLowerCase()) || codeSearch == "")
+      && (element.tenThuongHieu.toLowerCase().includes(brandSearch.toLowerCase()) || brandSearch == "")) {
+      newList.push(element);
+    }
+
   }
   displayListShoes(newList);
-  if (newList.length==0) document.getElementById("status").innerHTML = `Không tìm thấy sản phẩm!`;
-  if (newList.length!=0) document.getElementById("status").innerHTML =`Có ${newList.length} kết quả tìm được `;
+  if (newList.length == 0) document.getElementById("status").innerHTML = `Không tìm thấy sản phẩm!`;
+  if (newList.length != 0) document.getElementById("status").innerHTML = `Có ${newList.length} kết quả tìm được `;
 }

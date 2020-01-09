@@ -4,6 +4,7 @@ function goToQLSP(){
 function goToNhapHang(){
 window.location.href = ("GianHang.html");
 }
+
 //PARSEJSON-->
 let listShoes = JSON.parse(localStorage.getItem("Allshoes"));
 
