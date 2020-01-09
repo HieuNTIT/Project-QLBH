@@ -41,9 +41,9 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Nhập số điện thoại" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
                     </div>
-                  </div>
+                </div>
                 <button class="btn btn-primary" id="buttonOK">Đồng ý</button>
                 <div>
                     <table class="table">
@@ -62,13 +62,53 @@
                         </tfoot>
                     </table>
                     <div>
-                        <button class="btn btn-success">Thanh Toán</button>
+                        <button onclick="openProfile()" class="btn btn-success">Thanh Toán</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- modal -->
+    <div class="modal fade" id="khach-hang">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="myForm" onsubmit="addProduct(event)">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Thông tin khách hàng</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
 
+                    <!-- Modal body -->
+                    <div class="modal-body">
+
+                        <!-- onsubmit có lệnh required để bắt buộc phải điền vào -->
+
+                        <div class="form-group">
+                            <label for="addname">Tên khách hàng</label>
+                            <input type="text" required class="form-control" placeholder="Nhập tên tên khách hàng" id="addname">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone-number">Số điện thoại</label>
+                            <input type="text" required class="form-control" placeholder="Nhập số điện thoại" id="phone-number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Address">Địa chỉ</label>
+                            <input type="text" required class="form-control" placeholder="Nhập địa chỉ" id="Address">
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-success">Lưu</button>
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
