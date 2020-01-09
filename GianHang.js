@@ -35,21 +35,41 @@ function getDefaulCustomer() {
     }
 }
 
-let content = ``;
-for (let i = 0; i < listShoes.length; i++) {
-    const element = listShoes[i];
-    content += `
-    <li class="col-12 col-md-6 col-lg-3">
-    <div >
-      <figure><img src=${element.imgUrl} class="img-responsive" alt=""></figure>
-      <form>
-        <input type="checkbox"  onchange = "checkOnProduct('${element.maSanPham}')" id=${element.maSanPham}> ${element.tenSanPham}
-      </form>
-    </div>
-    </li>
-    `
-    document.getElementById('listShoes').innerHTML = content;
+function displaySP() {
+    let content = ``;
+    for (let i = 0; i < listShoes.length; i++) {
+        const element = listShoes[i];
+        content += `
+        <li class="col-12 col-md-6 col-lg-3">
+        <div >
+          <figure><img id='img-${element.maSanPham}' src=${element.imgUrl} class="img-responsive" onclick = "check('${element.maSanPham}');checkOnProduct('${element.maSanPham}')" alt=""></figure>
+          <form>
+            <input type="checkbox"  onchange = "checkOnProduct('${element.maSanPham}')" id='${element.maSanPham}'> ${element.tenSanPham}
+          </form>
+        </div>
+        </li>
+        `
+        document.getElementById('listShoes').innerHTML = content;
+    }
 }
+displaySP();
+
+function check(maSP) {
+    // console.log(MaSP)
+    document.getElementById(`${maSP}`).checked = true;
+    document.getElementById(`img-${maSP}`).removeAttribute("onclick");
+    document.getElementById(`img-${maSP}`).setAttribute("onclick",`unCheck('${maSP}');checkOnProduct('${maSP}')`)
+    // displaySP();
+}
+
+function unCheck(maSP) {
+    document.getElementById(`${maSP}`).checked = false;
+    document.getElementById(`img-${maSP}`).removeAttribute("onclick");
+    document.getElementById(`img-${maSP}`).setAttribute("onclick",`check('${maSP}');checkOnProduct('${maSP}')`)
+
+    // displaySP();
+}
+
 var newList = [];
 
 function display(list) {
@@ -82,19 +102,49 @@ function openProfile() {
 }
 localStorage.setItem('customer', JSON.stringify(newCustomer));
 
+let listSP = [];
 function checkOnProduct(maSanPham) {
     for (let i = 0; i < listShoes.length; i++) {
         const element = listShoes[i];
         var checking = document.getElementById(`${element.maSanPham}`);
         if (maSanPham === element.maSanPham) {
             if (checking.checked == true) {
-                newList[i + 100] = element;
+                listSP.push(element);   
+                displayPickedTbody(listSP);
             }
             if (checking.checked == false) {
-                newList.splice(i + 100, 1)
-                i++;
+                for (let j = 0; j < listSP.length; j++) {
+                    const sp = listSP[j];
+                    if (sp.maSanPham === maSanPham) {
+                        listSP.splice(j,1)
+                    }
+                }
+                displayPickedTbody(listSP);
             };
         }
-        display(newList);
+        // display(newList);
     }
+    // for (let i = 0; i < listShoes.length; i++) {
+    //     const element = listShoes[i];
+    //     if (maSanPham === element.maSanPham) {
+    //         listSP.push()
+    //     }
+        
+    // }
+    
+}
+
+function displayPickedTbody(listSP) {
+    let content = ``;
+    for (let i = 0; i < listSP.length; i++) {
+        const element = listSP[i];
+        content += `
+        <tr>
+            <td>${element.tenSanPham}</td>
+            <td>${element.soLuong}</td>
+            <td>${element.giaBan}</td>
+        </tr>
+        `
+    }
+    document.getElementById("Picked").innerHTML = content;
 }
