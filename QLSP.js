@@ -170,7 +170,7 @@ function saveShoes(e) {
 }
 /////////===========Xóa==========///////////
 function deleteClother(maSanPham) {
-  if (confirm("Bạn muốn xóa SP này ?")) {
+  if (confirm("Bạn muốn xóa sản phẩm này ?")) {
     for (let i = 0; i < listShoes.length; i++) {
       const shoess = listShoes[i];
       if (shoess.maSanPham === maSanPham) {
